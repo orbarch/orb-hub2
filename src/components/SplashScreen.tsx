@@ -37,7 +37,7 @@ export default function SplashScreen() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-xl text-gray-600 max-w-2xl mx-auto"
         >
-          Your central resource for learning, standards, and checklists.
+          Checklists, checklists, and more checklists.
         </motion.p>
       </motion.div>
 
@@ -49,7 +49,7 @@ export default function SplashScreen() {
       >
         <div className="animate-bounce">
           <svg
-            className="w-6 h-6 mx-auto text-gray-400"
+            className="w-6 h-6 mx-auto text-gray-400 m-4"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

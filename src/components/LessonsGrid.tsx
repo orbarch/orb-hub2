@@ -1,10 +1,10 @@
 "use client";
 
-import React from 'react';
-import { Lesson } from '@/types/lesson';
-import LessonCard from './LessonCard';
-import FadeIn from './FadeIn';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import { Lesson } from "@/types/lesson";
+import LessonCard from "./LessonCard";
+import FadeIn from "./FadeIn";
+import { motion, AnimatePresence } from "framer-motion";
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = React.useState(value);
@@ -23,18 +23,18 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
-  const [order, setOrder] = React.useState<'newest' | 'oldest'>('newest');
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [order, setOrder] = React.useState<"newest" | "oldest">("newest");
+  const [searchTerm, setSearchTerm] = React.useState("");
   const debouncedSearch = useDebounce(searchTerm, 150);
 
   const filteredAndSorted = React.useMemo(() => {
     let result = [...lessons];
-    
+
     // Filter by search term
     if (debouncedSearch) {
       const searchLower = debouncedSearch.toLowerCase();
       result = result.filter(
-        lesson =>
+        (lesson) =>
           lesson.title.toLowerCase().includes(searchLower) ||
           lesson.description.toLowerCase().includes(searchLower) ||
           lesson.category.toLowerCase().includes(searchLower)
@@ -42,15 +42,34 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
     }
 
     // Sort by date
-    result.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
-    if (order === 'oldest') result.reverse();
+    result.sort(
+      (a, b) =>
+        new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+    );
+    if (order === "oldest") result.reverse();
 
     return result;
   }, [lessons, debouncedSearch, order]);
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-800 mb-4">ORB University</h1>
+      <div className="mb-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl font-bold text-gray-800 mb-4"
+        >
+          ORB University
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-lg text-gray-600"
+        >
+          Learn through our comprehensivelessons and tutorials.
+        </motion.p>
+      </div>
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
         <div className="flex-1">
           <div className="relative">
@@ -64,7 +83,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
             />
             {searchTerm && (
               <button
-                onClick={() => setSearchTerm('')}
+                onClick={() => setSearchTerm("")}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 aria-label="Clear search"
               >
@@ -78,24 +97,24 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => setOrder('newest')}
-              aria-pressed={order === 'newest'}
+              onClick={() => setOrder("newest")}
+              aria-pressed={order === "newest"}
               className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 transition-shadow ${
-                order === 'newest'
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200'
+                order === "newest"
+                  ? "bg-green-600 text-white"
+                  : "bg-white text-gray-700 border border-gray-200"
               }`}
             >
               Newest
             </button>
             <button
               type="button"
-              onClick={() => setOrder('oldest')}
-              aria-pressed={order === 'oldest'}
+              onClick={() => setOrder("oldest")}
+              aria-pressed={order === "oldest"}
               className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 transition-shadow ${
-                order === 'oldest'
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200'
+                order === "oldest"
+                  ? "bg-green-600 text-white"
+                  : "bg-white text-gray-700 border border-gray-200"
               }`}
             >
               Oldest
@@ -106,7 +125,10 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
 
       <FadeIn>
         {filteredAndSorted.length > 0 ? (
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
+          >
             <AnimatePresence initial={false}>
               {filteredAndSorted.map((lesson) => (
                 <motion.div

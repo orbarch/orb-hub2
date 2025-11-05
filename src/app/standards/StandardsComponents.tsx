@@ -102,7 +102,7 @@ export function AnimatedHeader() {
         transition={{ delay: 0.1 }}
         className="text-lg text-gray-600"
       >
-        Access and manage standardized documentation, templates, and guidelines
+        Access and manage standardized documentation, templates, and guidelines.
       </motion.p>
     </div>
   )
