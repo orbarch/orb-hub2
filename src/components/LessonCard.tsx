@@ -10,7 +10,7 @@ interface LessonCardProps {
 export default function LessonCard({ lesson }: LessonCardProps) {
   return (
     <Link
-      href={`/lessons/${lesson.id}`}
+      href={`/orbuniversity/${lesson.id}`}
       className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 h-full flex flex-col"
       role="article"
       aria-labelledby={`lesson-${lesson.id}-title`}
