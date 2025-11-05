@@ -2,9 +2,9 @@
 
 import React from 'react';
 import FadeIn from '@/components/FadeIn';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { StandardSection } from '@/types/standards';
-import { revitManuals } from '@/data/revit-manuals';
+import { revitManuals } from '@/data/manuals';
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = React.useState(value);
@@ -106,11 +106,22 @@ function ManualsList({ items, searchTerm }: { items: StandardSection['items']; s
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredItems.map((item) => (
-        <RevitManualCard key={item.title} item={item} />
-      ))}
-    </div>
+    <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <AnimatePresence initial={false}>
+        {filteredItems.map((item) => (
+          <motion.div
+            key={item.title}
+            layout
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.18 }}
+          >
+            <RevitManualCard item={item} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </motion.div>
   );
 }
 

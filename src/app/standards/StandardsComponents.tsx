@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { StandardSection } from '@/types/standards';
 import FadeIn from '@/components/FadeIn';
 import React from 'react';
@@ -66,11 +66,22 @@ export function AnimatedStandardsSection({ section }: { section: StandardSection
           {section.description}
         </motion.p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {section.items.map((item) => (
-          <StandardCard key={item.title} item={item} />
-        ))}
-      </div>
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatePresence initial={false}>
+          {section.items.map((item) => (
+            <motion.div
+              key={item.title}
+              layout
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              transition={{ duration: 0.18 }}
+            >
+              <StandardCard item={item} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }
@@ -168,10 +179,21 @@ export function StandardsContent({ sections, searchTerm }: { sections: StandardS
   }
 
   return (
-    <div className="space-y-12">
-      {filteredSections.map((section) => (
-        <AnimatedStandardsSection key={section.title} section={section} />
-      ))}
-    </div>
+    <motion.div layout className="space-y-12">
+      <AnimatePresence initial={false}>
+        {filteredSections.map((section) => (
+          <motion.div
+            key={section.title}
+            layout
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <AnimatedStandardsSection section={section} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
+    </motion.div>
   );
 }

@@ -59,7 +59,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
               placeholder="Search lessons..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-shadow"
               aria-label="Search lessons"
             />
             {searchTerm && (
@@ -80,7 +80,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
               type="button"
               onClick={() => setOrder('newest')}
               aria-pressed={order === 'newest'}
-              className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 ${
+              className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 transition-shadow ${
                 order === 'newest'
                   ? 'bg-green-600 text-white'
                   : 'bg-white text-gray-700 border border-gray-200'
@@ -92,7 +92,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
               type="button"
               onClick={() => setOrder('oldest')}
               aria-pressed={order === 'oldest'}
-              className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 ${
+              className={`px-3 py-1 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-500 transition-shadow ${
                 order === 'oldest'
                   ? 'bg-green-600 text-white'
                   : 'bg-white text-gray-700 border border-gray-200'
