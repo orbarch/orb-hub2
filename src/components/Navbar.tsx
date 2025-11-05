@@ -1,19 +1,26 @@
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md" role="navigation" aria-label="Main navigation">
+    <nav
+      className="bg-white shadow-md"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link href="/" className="text-xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
+              <Link
+                href="/"
+                className="text-xl font-bold text-gray-800 hover:text-gray-600 transition-colors"
+              >
                 ORB-Hub
               </Link>
             </div>
@@ -46,7 +53,7 @@ export default function Navbar() {
               Manuals
             </Link>
             <Link
-              href="/employee-resources"
+              href="https://pto-form.vercel.app/"
               className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
               Employee Resources
@@ -58,20 +65,40 @@ export default function Navbar() {
             <motion.button
               onClick={() => setOpen(!open)}
               aria-expanded={open}
-              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-label={open ? "Close menu" : "Open menu"}
               initial={false}
               animate={open ? { scale: 1.06 } : { scale: 1 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+              transition={{ type: "spring", stiffness: 260, damping: 22 }}
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
             >
               {open ? (
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </motion.button>
@@ -90,11 +117,41 @@ export default function Navbar() {
             className="sm:hidden border-t border-gray-100 bg-white"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Home</Link>
-              <Link href="/orbuniversity" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">ORB University</Link>
-              <Link href="/standards" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Standards</Link>
-              <Link href="/manuals" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Manuals</Link>
-              <Link href="/employee-resources" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Employee Resources</Link>
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Home
+              </Link>
+              <Link
+                href="/orbuniversity"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                ORB University
+              </Link>
+              <Link
+                href="/standards"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Standards
+              </Link>
+              <Link
+                href="/manuals"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Manuals
+              </Link>
+              <Link
+                href="/employee-resources"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Employee Resources
+              </Link>
             </div>
           </motion.div>
         )}

@@ -3,7 +3,6 @@
 import React from "react";
 import FadeIn from "@/components/FadeIn";
 import { motion } from "framer-motion";
-import type { StandardSection } from "@/types/standards";
 import { manualSections } from "@/data/manuals";
 import {
   SearchBar,

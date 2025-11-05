@@ -1,28 +1,35 @@
 "use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import type { StandardSection } from '@/types/standards';
-import FadeIn from '@/components/FadeIn';
-import React from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import type { StandardSection } from "@/types/standards";
+import FadeIn from "@/components/FadeIn";
+import React from "react";
 
 interface StandardCard {
   title: string;
   description: string;
-  status?: 'draft' | 'review' | 'approved';
+  status?: "draft" | "review" | "approved";
   lastUpdated: string;
 }
 
-function StatusBadge({ status }: { status?: 'draft' | 'review' | 'approved' }) {
+function StatusBadge({
+  status,
+}: {
+  status?: "draft" | "review" | "approved" | "outdated";
+}) {
   const statusStyles = {
-    draft: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-    review: 'bg-blue-100 text-blue-800 border-blue-200',
-    approved: 'bg-green-100 text-green-800 border-green-200',
+    draft: "bg-yellow-100 text-yellow-800 border-yellow-200",
+    review: "bg-blue-100 text-blue-800 border-blue-200",
+    approved: "bg-green-100 text-green-800 border-green-200",
+    outdated: "bg-red-100 text-red-800 border-red-200",
   };
 
   if (!status) return null;
 
   return (
-    <span className={`text-xs px-2 py-1 rounded-full border ${statusStyles[status]}`}>
+    <span
+      className={`text-xs px-2 py-1 rounded-full border ${statusStyles[status]}`}
+    >
       {status.charAt(0).toUpperCase() + status.slice(1)}
     </span>
   );
@@ -46,7 +53,11 @@ function StandardCard({ item }: { item: StandardCard }) {
   );
 }
 
-export function AnimatedStandardsSection({ section }: { section: StandardSection }) {
+export function AnimatedStandardsSection({
+  section,
+}: {
+  section: StandardSection;
+}) {
   return (
     <section className="mb-12">
       <div className="mb-6">
@@ -66,7 +77,10 @@ export function AnimatedStandardsSection({ section }: { section: StandardSection
           {section.description}
         </motion.p>
       </div>
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         <AnimatePresence initial={false}>
           {section.items.map((item) => (
             <motion.div
@@ -105,10 +119,16 @@ export function AnimatedHeader() {
         Access and manage standardized documentation, templates, and guidelines.
       </motion.p>
     </div>
-  )
+  );
 }
 
-export function SearchBar({ searchTerm, onSearch }: { searchTerm: string; onSearch: (value: string) => void }) {
+export function SearchBar({
+  searchTerm,
+  onSearch,
+}: {
+  searchTerm: string;
+  onSearch: (value: string) => void;
+}) {
   return (
     <div className="relative mb-8">
       <input
@@ -121,7 +141,7 @@ export function SearchBar({ searchTerm, onSearch }: { searchTerm: string; onSear
       />
       {searchTerm && (
         <button
-          onClick={() => onSearch('')}
+          onClick={() => onSearch("")}
           className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
           aria-label="Clear search"
         >
@@ -148,7 +168,13 @@ function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-export function StandardsContent({ sections, searchTerm }: { sections: StandardSection[]; searchTerm: string }) {
+export function StandardsContent({
+  sections,
+  searchTerm,
+}: {
+  sections: StandardSection[];
+  searchTerm: string;
+}) {
   const debouncedSearch = useDebounce(searchTerm, 150);
 
   const filteredSections = React.useMemo(() => {
@@ -156,14 +182,15 @@ export function StandardsContent({ sections, searchTerm }: { sections: StandardS
 
     const searchLower = debouncedSearch.toLowerCase();
     return sections
-      .map(section => ({
+      .map((section) => ({
         ...section,
-        items: section.items.filter(item =>
-          item.title.toLowerCase().includes(searchLower) ||
-          item.description.toLowerCase().includes(searchLower)
-        )
+        items: section.items.filter(
+          (item) =>
+            item.title.toLowerCase().includes(searchLower) ||
+            item.description.toLowerCase().includes(searchLower)
+        ),
       }))
-      .filter(section => section.items.length > 0);
+      .filter((section) => section.items.length > 0);
   }, [sections, debouncedSearch]);
 
   if (filteredSections.length === 0) {

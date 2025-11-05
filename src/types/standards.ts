@@ -4,7 +4,7 @@ export interface StandardSection {
   items: {
     title: string;
     description: string;
-    status?: 'draft' | 'review' | 'approved';
+    status?: "draft" | "review" | "approved" | "outdated";
     lastUpdated: string;
   }[];
 }
