@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { StandardSection } from './page';
+import type { StandardSection } from '@/types/standards';
 import FadeIn from '@/components/FadeIn';
+import React from 'react';
 
 interface StandardCard {
   title: string;
@@ -94,4 +95,83 @@ export function AnimatedHeader() {
       </motion.p>
     </div>
   )
+}
+
+export function SearchBar({ searchTerm, onSearch }: { searchTerm: string; onSearch: (value: string) => void }) {
+  return (
+    <div className="relative mb-8">
+      <input
+        type="search"
+        placeholder="Search standards..."
+        value={searchTerm}
+        onChange={(e) => onSearch(e.target.value)}
+        className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+        aria-label="Search standards"
+      />
+      {searchTerm && (
+        <button
+          onClick={() => onSearch('')}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+      )}
+    </div>
+  );
+}
+
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = React.useState(value);
+
+  React.useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export function StandardsContent({ sections, searchTerm }: { sections: StandardSection[]; searchTerm: string }) {
+  const debouncedSearch = useDebounce(searchTerm, 150);
+
+  const filteredSections = React.useMemo(() => {
+    if (!debouncedSearch) return sections;
+
+    const searchLower = debouncedSearch.toLowerCase();
+    return sections
+      .map(section => ({
+        ...section,
+        items: section.items.filter(item =>
+          item.title.toLowerCase().includes(searchLower) ||
+          item.description.toLowerCase().includes(searchLower)
+        )
+      }))
+      .filter(section => section.items.length > 0);
+  }, [sections, debouncedSearch]);
+
+  if (filteredSections.length === 0) {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="text-center py-12 text-gray-500"
+      >
+        No standards found matching &quot;{searchTerm}&quot;
+      </motion.div>
+    );
+  }
+
+  return (
+    <div className="space-y-12">
+      {filteredSections.map((section) => (
+        <AnimatedStandardsSection key={section.title} section={section} />
+      ))}
+    </div>
+  );
 }

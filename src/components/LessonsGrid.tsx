@@ -50,7 +50,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">ORB University</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">ORB University</h1>
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">
         <div className="flex-1">
           <div className="relative">
