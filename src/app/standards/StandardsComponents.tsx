@@ -8,14 +8,14 @@ import React from "react";
 interface StandardCard {
   title: string;
   description: string;
-  status?: "draft" | "review" | "approved";
+  status?: "draft" | "review" | "approved" | "outdated";
   lastUpdated: string;
 }
 
 function StatusBadge({
   status,
 }: {
-  status?: "draft" | "review" | "approved" | "outdated";
+  status?: "draft" | "review" | "approved" | "outdated" | undefined;
 }) {
   const statusStyles = {
     draft: "bg-yellow-100 text-yellow-800 border-yellow-200",
