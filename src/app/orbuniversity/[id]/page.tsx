@@ -18,7 +18,7 @@ export default async function LessonPage({ params }: any) {
       <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <nav className="mb-8">
           <a
-            href="/"
+            href="/orbuniversity"
             className="text-green-600 hover:text-green-800 transition-colors"
           >
             ← Back to Lessons

@@ -27,10 +27,16 @@ export default function Navbar() {
                 ORB University
               </Link>
               <Link
-                href="/categories"
+                href="/standards"
                 className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               >
-                Categories
+                Standards
+              </Link>
+              <Link
+                href="/employee-resources"
+                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Employee Resources
               </Link>
             </div>
           </div>
