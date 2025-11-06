@@ -3,6 +3,8 @@ export interface Lesson {
   title: string;
   description: string;
   content: string;
+  videoId: string;
+  resources: string;
   category: string;
   createdAt: string;
   updatedAt: string;

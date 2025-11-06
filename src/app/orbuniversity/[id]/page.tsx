@@ -1,6 +1,7 @@
-import { lessons } from '@/data/lessons';
-import { notFound } from 'next/navigation';
-import FadeIn from '@/components/FadeIn';
+import { lessons } from "@/data/lessons";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 export default async function LessonPage({ params }: any) {
   // `params` may be a Promise in some Next.js setups — await it safely
@@ -35,11 +36,29 @@ export default async function LessonPage({ params }: any) {
                   {lesson.category}
                 </span>
                 <time className="text-gray-500 text-sm">
-                  Last updated: {new Date(lesson.updatedAt).toLocaleDateString()}
+                  Last updated:{" "}
+                  {new Date(lesson.updatedAt).toLocaleDateString()}
                 </time>
               </div>
             </header>
+            <div className={`relative pb-[56.25%] h-0 overflow-hidden mb-8`}>
+              <iframe
+                src={`https://www.youtube.com/embed/${lesson.videoId}`}
+                title={lesson.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              ></iframe>
+            </div>
             <div className="text-gray-600">{lesson.content}</div>
+            <div className="text-gray-600">
+              <Link
+                href={lesson.resources}
+                className="text-sm font-bold text-green-500 hover:text-gray-600 transition-colors"
+              >
+                <p className="mt-4">Resource files.</p>
+              </Link>
+            </div>
           </article>
         </FadeIn>
       </div>
