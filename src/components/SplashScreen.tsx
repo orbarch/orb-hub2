@@ -1,11 +1,11 @@
 "use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function SplashScreen() {
   return (
-  <div className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-50">
+    <div className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export default function SplashScreen() {
             priority
           />
         </div>
-        
+
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -30,7 +30,7 @@ export default function SplashScreen() {
         >
           Welcome to ORB-Hub
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -45,11 +45,11 @@ export default function SplashScreen() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-20 md:bottom-16 w-full text-center"
+        className="absolute bottom-20 md:bottom-20 w-full text-center"
       >
         <div className="animate-bounce">
           <svg
-            className="w-6 h-6 mx-auto text-gray-400 m-4"
+            className="w-6 h-6 mx-auto text-gray-400"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
