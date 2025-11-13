@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import NotFoundVisual from '@/components/NotFoundVisual';
+import Link from "next/link";
+import NotFoundVisual from "@/components/NotFoundVisual";
 
 export default function NotFound() {
   return (
@@ -7,11 +7,13 @@ export default function NotFound() {
       <div className="max-w-3xl mx-auto bg-white border border-gray-100 shadow-sm rounded-lg p-8 text-center">
         <NotFoundVisual />
 
-        <h1 className="mt-6 text-3xl font-extrabold text-gray-900">404 — Page not found</h1>
+        <h1 className="mt-6 text-3xl font-extrabold text-gray-900">
+          404 — Page not found
+        </h1>
 
         <p className="mt-3 text-gray-600">
-          Looks like this page stepped out for a quick coffee. The lesson you're looking for
-          might be hiding somewhere else in the library.
+          Looks like this page stepped out for a quick coffee. The content
+          you're looking for might be hiding somewhere else in the hub.
         </p>
 
         <div className="mt-6 flex justify-center gap-4">
@@ -30,7 +32,9 @@ export default function NotFound() {
           </Link>
         </div>
 
-        <p className="mt-6 text-xs text-gray-400">Or try searching from the top bar — it’s feeling helpful today.</p>
+        <p className="mt-6 text-xs text-gray-400">
+          Or try searching from the top bar — it’s feeling helpful today.
+        </p>
       </div>
     </div>
   );

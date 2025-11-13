@@ -2,13 +2,16 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import type { StandardSection } from "@/types/standards";
+import { manualSections } from "@/data/manuals";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import React from "react";
+import { standardSections } from "@/data/standards";
 
 interface StandardCard {
   title: string;
   description: string;
+  link: string;
   status?: "draft" | "review" | "approved" | "outdated";
   lastUpdated: string;
 }
@@ -38,19 +41,21 @@ function StatusBadge({
 
 function StandardCard({ item }: { item: StandardCard }) {
   return (
-    <motion.div
-      whileHover={{ y: -2 }}
-      className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow"
-    >
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="text-lg font-medium text-gray-900">{item.title}</h3>
-        <StatusBadge status={item.status} />
-      </div>
-      <p className="text-sm text-gray-600 mb-3">{item.description}</p>
-      <div className="text-xs text-gray-500">
-        Updated: {new Date(item.lastUpdated).toLocaleDateString()}
-      </div>
-    </motion.div>
+    <Link href={item.link} role="article">
+      <motion.div
+        whileHover={{ y: -2 }}
+        className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow"
+      >
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-lg font-medium text-gray-900">{item.title}</h3>
+          <StatusBadge status={item.status} />
+        </div>
+        <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+        <div className="text-xs text-gray-500">
+          Updated: {new Date(item.lastUpdated).toLocaleDateString()}
+        </div>
+      </motion.div>
+    </Link>
   );
 }
 
