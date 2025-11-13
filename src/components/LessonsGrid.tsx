@@ -67,7 +67,7 @@ export default function LessonsGrid({ lessons }: { lessons: Lesson[] }) {
           transition={{ delay: 0.1 }}
           className="text-lg text-gray-600"
         >
-          Learn through our comprehensivelessons and tutorials.
+          Learn through our comprehensive lessons and tutorials.
         </motion.p>
       </div>
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6">

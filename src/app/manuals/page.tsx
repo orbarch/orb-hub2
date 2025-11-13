@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { motion } from "framer-motion";
 import { manualSections } from "@/data/manuals";
@@ -9,8 +10,6 @@ import {
   StandardsContent,
   AnimatedHeader,
 } from "@/app/standards/StandardsComponents";
-
-// Use `manualSections` from data to mirror how `standardSections` is organized
 
 export default function RevitManualsPage() {
   const [searchTerm, setSearchTerm] = React.useState("");

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import type { StandardSection } from "@/types/standards";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import React from "react";
 
