@@ -79,7 +79,7 @@ export const manualSections: StandardSection[] = [
         title: "Browser Organization",
         description: "Management of views and sheets inside Revit.",
         link: "https://drive.google.com/file/d/19Q6OuTxgtsAJs6FvPoQcbiScSuT7iC_X/view?usp=sharing",
-        status: "outdated",
+        status: "approved",
         lastUpdated: "2025-10-28",
       },
     ],
@@ -132,8 +132,8 @@ export const manualSections: StandardSection[] = [
       {
         title: "Rated Assemblies",
         description: "Lists of wall rated assemblies.",
-        link: "https://drive.google.com/file/d/19JwLYRDBJkOhjcIioU-d03HtHoYdHzkO/view?usp=sharing",
-        status: "outdated",
+        link: "https://drive.google.com/file/d/1PibOm0JvmLfSso56CpzWQ62e1G1So-bg/view?usp=sharing",
+        status: "approved",
         lastUpdated: "2025-10-25",
       },
     ],
@@ -220,8 +220,15 @@ export const manualSections: StandardSection[] = [
       {
         title: "Project Checklist by Phase",
         description: "Items checklist.",
-        link: "https://docs.google.com/spreadsheets/d/1UHV-o1FEWK75rgp7CCotMLTXmA7BYHzW/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
-        status: "outdated",
+        link: "https://docs.google.com/spreadsheets/d/13xDYrsUF0mSDuyQKhapT1z2ZbMoDEqLb/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
+        status: "approved",
+        lastUpdated: "2025-10-25",
+      },
+      {
+        title: "Keynote Checklist",
+        description: "Keynote items checklist.",
+        link: "https://docs.google.com/spreadsheets/d/1OJ1hGb70VzX1VBNlQCJOFZFCV9wazFSt/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
+        status: "approved",
         lastUpdated: "2025-10-25",
       },
       {
@@ -252,6 +259,13 @@ export const manualSections: StandardSection[] = [
         status: "approved",
         lastUpdated: "2025-10-25",
       },
+      {
+        title: "Uploading Files to ShareFile",
+        description: "ShareFile file-sharing instructions.",
+        link: "https://drive.google.com/file/d/1bn8ffZoeDGR9BrUBLaCz21SXZSG4Ul_-/view?usp=sharing",
+        status: "approved",
+        lastUpdated: "2025-04-28",
+      },
     ],
   },
   {
@@ -261,7 +275,7 @@ export const manualSections: StandardSection[] = [
       {
         title: "Model Health Checklist",
         description: "Model health checkup.",
-        link: "https://docs.google.com/spreadsheets/d/1urNfVaKqdvpgMzoUFooapLQDsZRmY_GL/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
+        link: "https://docs.google.com/spreadsheets/d/1dWoaeUpxGFoPzKpByJgjMietu6ETd3IR/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
         status: "outdated",
         lastUpdated: "2025-10-25",
       },
