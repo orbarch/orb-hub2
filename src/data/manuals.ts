@@ -64,7 +64,7 @@ export const manualSections: StandardSection[] = [
       {
         title: "Naming Conventions",
         description: "Standard drawings names.",
-        link: "https://drive.google.com/file/d/1JtNGlMjvjfL-TTGhIEEBT2b0H-GwSmbX/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1AlSgG-P4ckhaVfo6WP6ba9Ywa110qOoF/view?usp=sharing",
         status: "outdated",
         lastUpdated: "2025-10-28",
       },
