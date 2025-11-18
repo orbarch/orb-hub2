@@ -22,7 +22,7 @@ export const standardSections: StandardSection[] = [
       },
       {
         title: "Slabs & Dimensioning",
-        description: "Standard drawing sets for slabs and dimensioning plans.",
+        description: "Standard drawing sets for slabs and dimension plans.",
         link: "https://drive.google.com/file/d/1AIWzZX3t6RuJB_7QoV2nLXp-u7VigTNE/view?usp=sharing",
         status: "approved",
         lastUpdated: "2025-10-28",
