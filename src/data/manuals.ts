@@ -276,7 +276,7 @@ export const manualSections: StandardSection[] = [
         title: "Model Health Checklist",
         description: "Model health checkup.",
         link: "https://docs.google.com/spreadsheets/d/1dWoaeUpxGFoPzKpByJgjMietu6ETd3IR/edit?usp=sharing&ouid=115917362032696382498&rtpof=true&sd=true",
-        status: "outdated",
+        status: "review",
         lastUpdated: "2025-10-25",
       },
       {

@@ -12,7 +12,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1KHXQC05unLHDuCKa9_GqTlbkS5Kz_O4U/view?usp=drive_link",
     category: "Waterproofing",
     createdAt: "2025-11-01T00:00:00Z",
-    updatedAt: "2019-02-06t12:00:00Z",
+    updatedAt: "2019-02-06T12:00:00Z",
   },
   {
     id: "2",
@@ -24,7 +24,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/10xUMpbWiz7S8Db4kvLZDC1WwTVR7pR-e/view?usp=sharing",
     category: "Waterproofing",
     createdAt: "2025-11-02T00:00:00Z",
-    updatedAt: "2019-02-20t12:00:00Z",
+    updatedAt: "2019-02-20T12:00:00Z",
   },
   {
     id: "3",
@@ -36,7 +36,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1px4z6N0oSMhaYPeAZaZ6KeO7vLA4GdcN/view?usp=sharing",
     category: "Code Training",
     createdAt: "2025-11-03T00:00:00Z",
-    updatedAt: "2019-03-05t12:00:00Z",
+    updatedAt: "2019-03-05T12:00:00Z",
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1WYwI9CbnIMOvV78qPAqJrCL4hG8iUIfK/view?usp=sharing",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-04-22t12:00:00Z",
+    updatedAt: "2020-04-22T12:00:00Z",
   },
   {
     id: "5",
@@ -60,7 +60,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1mmOUMCpX_adye5Viqu9nxoJbY2V-QCFp/view?usp=sharing",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-04-29t12:00:00Z",
+    updatedAt: "2020-04-29T12:00:00Z",
   },
   {
     id: "6",
@@ -71,7 +71,7 @@ export const lessons: Lesson[] = [
     resources: "https://www.youtube.com/watch?v=crPl0ITIkS0",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-05-27t12:00:00Z",
+    updatedAt: "2020-05-27T12:00:00Z",
   },
   {
     id: "7",
@@ -84,7 +84,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1SAEnKOO4tP4vLidf65wHF_2Wuj9bY8fr/view?usp=sharing",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-07-29t12:00:00Z",
+    updatedAt: "2020-07-29T12:00:00Z",
   },
   {
     id: "8",
@@ -97,7 +97,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1vgr82zeXLeCGRyhzCh9IT9yWt7R8g8xP/view?usp=sharing",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-08-12t12:00:00Z",
+    updatedAt: "2020-08-12T12:00:00Z",
   },
   {
     id: "9",
@@ -110,7 +110,7 @@ export const lessons: Lesson[] = [
       "https://drive.google.com/file/d/1u36CuSJYEBJvPwAafsF1zRP1GtTdG_Qn/view?usp=sharing",
     category: "Life Safety",
     createdAt: "2025-11-04T00:00:00Z",
-    updatedAt: "2020-08-19t12:00:00Z",
+    updatedAt: "2020-08-19T12:00:00Z",
   },
   {
     id: "10",
