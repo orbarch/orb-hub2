@@ -39,12 +39,20 @@ export default function SplashScreen() {
         >
           Checklists, checklists, and more checklists.
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.8 }}
+          className="text-xl text-gray-600 max-w-2xl mx-auto"
+        >
+          We got spreadsheets too.
+        </motion.p>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
         className="absolute bottom-20 md:bottom-20 w-full text-center"
       >
         <div className="animate-bounce">
