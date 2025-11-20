@@ -33,7 +33,7 @@ export default function NotFound() {
         </div>
 
         <p className="mt-6 text-xs text-gray-400">
-          Or try searching from the top bar — it’s feeling helpful today.
+          Or try to take a walk, it's great outside.
         </p>
       </div>
     </div>
